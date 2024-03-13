@@ -7,9 +7,9 @@ export default {
 </script>
 
 <template>
-    
+
 <img v-bind:src="image" alt="" class="grayscale hover:grayscale-0">
-    
+
 
 
 </template>
