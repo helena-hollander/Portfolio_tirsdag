@@ -13,7 +13,7 @@ export default {
         <Logo></Logo>
     </div>
     <div class="absolute end-0 bottom-0">
-        <img src="../assets/headshot_web.png" class="grayscale hover:grayscale-0">
+        <img src="../assets/headshot_web.png" class="grayscale hover:grayscale-0 translate-x-[-5vw]">
     </div>
 
 </template>

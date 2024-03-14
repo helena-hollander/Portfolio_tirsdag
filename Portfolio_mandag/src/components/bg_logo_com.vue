@@ -4,7 +4,7 @@
 
 <template>
     
-        <div class="my-auto">
+        <div class="my-auto opacity-90">
             <img src="../assets/logo_web.png">
         </div>
        <div class="absolute w-[250px] translate-x-[80vw] translate-y-[92vh]">
