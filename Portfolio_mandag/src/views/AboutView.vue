@@ -12,5 +12,8 @@ export default {
     <div class="px-[1vw] h-screen grid absolute">
         <Logo></Logo>
     </div>
+    <div class="absolute end-0 bottom-0">
+        <img src="../assets/headshot_web.png" class="grayscale hover:grayscale-0">
+    </div>
 
 </template>
