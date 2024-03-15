@@ -20,11 +20,25 @@ export default {
           scrollTrigger: {
             trigger: ".project1view",
             pin: true,
-            scrub: 0.1,
+            scrub: true,
             end: "+=" + 1000 * length
           }
         });
-    })
+
+        gsap.to(".portrait1", {
+          xPercent: 300,
+          ease: 'none',
+          scrollTrigger: {
+            trigger: ".first-section",
+            start: "center center",
+            end: "right left",
+            scrub: true,
+            markers: true,
+
+          }
+        })
+
+    }) //Her slutter next tick
   }
 }
 
@@ -39,14 +53,14 @@ export default {
    </div>
   </div> -->
   <div class="flex flex-nowrap project1view">
-    <section class="flex-none w-screen h-screen bg-red-500 relative">
-      <Image image="src/assets/Lipstick_Lover_web.jpg" class="h-[65vh] absolute translate-x-[15vw] translate-y-[25vh]"></Image>
+    <section class="flex-none w-screen h-screen relative first-section">
+      <img src="../../assets/Resting_web.jpg" class="portrait1 h-[90vh] translate-x-[10vw] translate-y-[5vh]">
     </section>
-    <section class="flex-none w-screen h-screen bg-yellow-500 relative">
-      <Image image="src/assets/Mie_In_The_Sky_web.jpg" class="h-[45vh] absolute translate-x-[-5vw] translate-y-[40vh] "></Image>
+    <section class="flex-none w-screen h-screen bg-yellow-500/20 relative">
+      
     </section>
     <section class="flex-none w-screen h-screen bg-purple-500 relative">
-      THREE
+      
     </section>
   </div>
   </template>
