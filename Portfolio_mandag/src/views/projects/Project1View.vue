@@ -1,27 +1,30 @@
 <script>
 import { gsap } from "gsap";
-    
-    import { ScrollTrigger } from "gsap/ScrollTrigger";
-    gsap.registerPlugin(ScrollTrigger);
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Image from '@/components/home_image.vue'
+gsap.registerPlugin(ScrollTrigger);
 
-/*let imgContainerElement = document.getElementById("image-container");*/
+
 
 export default {
+  components: {
+    Image
+},
   mounted() {
-    gsap.to("#image-container", {
-      x: -300,
-
-      scrollTrigger: {
-        trigger: "body",
-        markers: true,
-        start: "top top",
-        end: "1500px",
-        scrub: 1,
-        pin: true,
-        
-      
-      }
-    });
+    this.$nextTick(() => {
+      let sections = gsap.utils.toArray(".project1view section");
+      const length = sections.length - 1
+      let scrollTween = gsap.to(sections, {
+          xPercent: -100 * length,
+          ease: "none",
+          scrollTrigger: {
+            trigger: ".project1view",
+            pin: true,
+            scrub: 0.1,
+            end: "+=" + 1000 * length
+          }
+        });
+    })
   }
 }
 
@@ -30,9 +33,20 @@ export default {
 
 
 <template>
-  <body class="scroll h-screen">
-   <div id="image-container" class="absolute">
+  <!-- <div class="scroll h-screen">
+   <div class="absolute">
     <img src="../../assets/Resting_web.jpg" class="grid h-[90vh] translate-x-[20vw] translate-y-[5vh]">
    </div>
-  </body>
+  </div> -->
+  <div class="flex flex-nowrap project1view">
+    <section class="flex-none w-screen h-screen bg-red-500 relative">
+      <Image image="src/assets/Lipstick_Lover_web.jpg" class="h-[65vh] absolute translate-x-[15vw] translate-y-[25vh]"></Image>
+    </section>
+    <section class="flex-none w-screen h-screen bg-yellow-500 relative">
+      <Image image="src/assets/Mie_In_The_Sky_web.jpg" class="h-[45vh] absolute translate-x-[-5vw] translate-y-[40vh] "></Image>
+    </section>
+    <section class="flex-none w-screen h-screen bg-purple-500 relative">
+      THREE
+    </section>
+  </div>
   </template>
